@@ -1,0 +1,2 @@
+1.create a repository on github.
+2.creat a project on eclipse and then team to git and commit.
