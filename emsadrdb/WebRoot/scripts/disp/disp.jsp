@@ -1,0 +1,1 @@
+<script src="<c:url value="/scripts/disp/disp.js"/>" type="text/javascript"></script>

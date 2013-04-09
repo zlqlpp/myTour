@@ -1,0 +1,2 @@
+<script src="<c:url value="/widgets/jquery/impromptu/jquery-impromptu.3.1.min-xg.js"/>" type="text/javascript"></script>
+<link href="<c:url value="/widgets/jquery/impromptu/impromptu.css"/>" type="text/css" rel="stylesheet">

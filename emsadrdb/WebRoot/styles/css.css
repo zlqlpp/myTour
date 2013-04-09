@@ -1,0 +1,68 @@
+/*总体样式*/
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #F8F9FA;
+}
+
+a:link{
+	color:#3A5FCD;
+	text-decoration: none;
+}
+a:visited{
+	color:#8B008B;
+	text-decoration: none;	
+}
+a:hover{
+	color:#8B008B;
+	text-decoration: underline;
+}
+/*标题头*/
+.left_topbg {
+	background-image: url(content-bg.gif);
+	background-repeat: repeat-x;
+}
+
+.titlebt {
+	font-size: 12px;
+	line-height: 26px;
+	font-weight: bold;
+	color: #000000;
+	background-image: url(top_bt.jpg);
+	background-repeat: no-repeat;
+	display: block;
+	text-indent: 10px;
+	padding-top: 5px;
+}
+
+.titlebt_unback {
+	font-size: 12px;
+	line-height: 26px;
+	font-weight: bold;
+	color: #000000;
+	display: block;
+	text-indent: 10px;
+	padding-top: 5px;
+}
+
+.sec2 {
+	FONT-WEIGHT: bold;
+	CURSOR: hand;
+	COLOR: #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 25px;
+	background-color: #e2e7ed;
+	border: 1px solid #e2e7ed;
+}
+.ac_input{
+	BORDER-RIGHT: #999999 1px solid;
+	BORDER-TOP: #999999 1px solid;
+	FONT: 12px Tahoma, Verdana;
+	BORDER-LEFT: #999999 1px solid;
+	COLOR: #444444;
+	BORDER-BOTTOM: #999999 1px solid;
+	BACKGROUND-COLOR: #ffffff;
+}

@@ -1,0 +1,2 @@
+<link rel="stylesheet" type="text/css" href="<c:url value="/widgets/jquery/multiselect/jquery.multiselect2side.css"/>"></link>
+<script src="<c:url value="/widgets/jquery/multiselect/jquery.multiselect2side.js"/>" type="text/javascript"></script>

@@ -1,0 +1,1 @@
+<script src="<c:url value="/widgets/jquery/blockui/jquery.blockUI.js"/>" type="text/javascript"></script>

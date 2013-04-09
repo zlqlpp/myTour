@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+
+	<diskStore path="java.io.tmpdir/hibernate/emsadrdb" />
+	<!--
+		DefaultCache setting.
+		Modify ehcache-safe.xml for timeToIdleSeconds,timeToLiveSecond,diskExpiryThreadIntervalSeconds.
+		Use ehcache-safe.xml default for maxElementsInMemory,maxElementsOnDisk,overflowToDisk,eternal.
+		Use ehcache default for memoryStoreEvictionPolicy,diskPersistent.
+	-->
+	<defaultCache maxElementsInMemory="10000"
+            eternal="false"
+            overflowToDisk="true"
+            timeToIdleSeconds="0"
+            timeToLiveSeconds="0"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="120"/>
+	<cache name="baseOrgDistrictCache"
+		   maxElementsInMemory="100000"
+		   eternal="true"
+		   overflowToDisk="true"/>
+	<cache name="districtCache"
+		   maxElementsInMemory="1000000"
+		   eternal="true"
+		   overflowToDisk="true"/>
+	<cache name="postsegCache"
+		   maxElementsInMemory="1000000"
+		   eternal="true"
+		   overflowToDisk="true"/>
+	<cache name="departmentCache"
+		   maxElementsInMemory="1000000"
+		   eternal="true"
+		   overflowToDisk="true"/>
+	<cache name="resourceCache"
+		   maxElementsInMemory="10000"
+		   eternal="true"
+		   overflowToDisk="true"/>
+</ehcache>

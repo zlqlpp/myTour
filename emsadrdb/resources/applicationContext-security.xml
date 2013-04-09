@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-2.0.4.xsd"
+                        default-autowire="byName" default-lazy-init="true">
+
+	<authentication-manager alias="authenticationManager"/>
+	
+	<beans:bean id="accessDecisionManager" class="org.springframework.security.vote.AffirmativeBased">
+	    <beans:property name="allowIfAllAbstainDecisions" value="false"/>
+	    <beans:property name="decisionVoters">
+	        <beans:list>
+	            <beans:bean class="org.springframework.security.vote.RoleVoter"/>
+	            <beans:bean class="org.springframework.security.vote.AuthenticatedVoter"/>
+	        </beans:list>
+	    </beans:property>
+	</beans:bean>
+	
+	<beans:bean id="filterInvocationInterceptor" class="org.springframework.security.intercept.web.FilterSecurityInterceptor">
+		<custom-filter before="FILTER_SECURITY_INTERCEPTOR"/>
+		<beans:property name="authenticationManager" ref="authenticationManager"/>
+	    <beans:property name="accessDecisionManager" ref="accessDecisionManager"/>
+	    <beans:property name="objectDefinitionSource" ref="secureResourceFilter" />
+	</beans:bean>
+	
+	<beans:bean id="secureResourceFilter" class="com.cpst.emsadrdb.service.security.MySecureResourceFilter" autowire="byName"/>
+	
+	<http auto-config="true" access-denied-page="/common/403.jsp">
+	    <concurrent-session-control max-sessions="20"/>
+	    <form-login login-page="/login/login.action" default-target-url="/login/login.action" authentication-failure-url="/index.jsp?error=true" always-use-default-target="true"/>
+	    <logout invalidate-session="true" logout-success-url="/login/login.action"/>
+	</http>
+	
+	 
+	
+	<authentication-provider user-service-ref="userDetailsService">
+		<password-encoder hash="plaintext" />
+	</authentication-provider>
+	
+	
+	<beans:bean id="userDetailsService" class="com.cpst.emsadrdb.service.security.UserDetailServiceImpl" />
+	
+
+	
+
+	 
+	<beans:bean id="loggerListener" class="org.springframework.security.event.authentication.LoggerListener"/>
+
+</beans:beans>

@@ -1,0 +1,2 @@
+<script src="<c:url value="/widgets/jquery/jqueryvalidate/jquery.validate.js"/>" type="text/javascript"></script>
+<link href="${ctx}/widgets/jquery/jqueryvalidate/css/screen.css" type="text/css" rel="stylesheet">

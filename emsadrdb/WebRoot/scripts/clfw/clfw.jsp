@@ -1,0 +1,1 @@
+<script src="<c:url value="/scripts/clfw/clfw.js"/>" type="text/javascript"></script>

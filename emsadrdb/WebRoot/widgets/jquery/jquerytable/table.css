@@ -1,0 +1,148 @@
+/*Table专用Style*/
+
+
+a:link,a:visited,a:active {
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.sjTable{
+	border-left: 1px solid #CADAE8;
+	border-top: 1px solid #CADAE8;
+    
+}
+.sjTable th {
+	background-color: #3a95c2;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    white-space: nowrap;
+    border-right: 1px solid #DAE6EF;
+	background-image: url( "images/tableTopbg.gif" );
+}
+
+.sjTable td {
+	vertical-align: middle;
+    font-size: 12px;
+    text-align: right;
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #CADAE8;
+    border-right: 1px solid #DAE6EF;
+}
+
+.sjTable td * {
+	padding: 6px 11px;
+}
+
+.sjTable tr.alt td {
+	background: #ecf6fc; /*这行将给所有的偶数tr加上背景色*/
+}
+
+.sjTable tr.over td {
+	background: #FEEBD0; /*这个将是鼠标高亮行的背景色*/
+}
+.pageTitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1a7cdf;
+    letter-spacing: 10px;
+    text-decoration: none;
+    text-align: left;
+    padding: 5px 0px 10px 40px;
+    background: url(images/icon/32x32/pageTitle.gif ) no-repeat;
+}
+
+.sjFilter {
+	font-size: 14px;
+	margin:0 auto; 
+}
+
+.sjFilterTdl {
+	text-align: left;
+}
+
+.sjFilterTdr {
+	text-align: right;
+}
+
+.sjFilter input {
+	BORDER-RIGHT: #CAE5E8 1px solid;
+	BORDER-TOP: #CAE5E8 1px solid;
+	FONT: 12px Tahoma, Verdana;
+	BORDER-LEFT: #CAE5E8 1px solid;
+	COLOR: #444444;
+	BORDER-BOTTOM: #CAE5E8 1px solid;
+	BACKGROUND-COLOR: #ffffff;
+}
+
+
+.sjFilter td {
+	vertical-align: bottom;
+}
+
+.sjForm{
+	padding: 10px; 
+    margin: 10px;
+    background: #ecf6fc; 
+    font: verdana, arial, sans-serif;
+    text-align: left;
+    font-size: 12px;
+    color: #336699;
+    position: absolute;
+  	left: 100px;
+ 	top: 150px;
+}
+
+.sjForm th {
+	background-color: #3a95c2;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    white-space: nowrap;
+    border-right: 1px solid #DAE6EF;
+	background-image: url( "images/tableTopbg.gif" );
+}
+
+.sjView{
+    font: verdana, arial, sans-serif;
+    text-align: left;
+    font-size: 12px;
+    color: #336699;
+}
+
+.actionMessage{
+    font: verdana, arial, sans-serif;
+    text-align: center;
+    font-size: 14px;
+    color: #336699;
+    background-image: url( "images/messagebgImg.jpg" );
+}
+
+
+.operations {
+	font-size: 14px;
+    float: right;
+    text-align: right;
+    margin: 5px 30px 0px 0px;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+.nullBorder {
+    border: 0px;
+    cursor: pointer;
+}
