@@ -23,6 +23,7 @@
 		//}
 		alert(xmlhttprequest.responseText);
 	}
+	
 	//EventUtil.addHandler("",);
 	
 </script>
