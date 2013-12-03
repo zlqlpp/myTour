@@ -42,4 +42,17 @@ public class WqInfoDaoImpl extends BaseDao implements WqInfoDao {
 		return list;
 	}
 
+	@Override
+	public Page findByPage(Page page) {
+		// TODO Auto-generated method stub
+		String sql="select w from WqInfo w";
+		Query query = (Query)this.getEm().createQuery(sql);
+        page.setTotal(query.getResultList().size());
+        int xpage = Integer.parseInt(page.getCurrentpage());
+        int xrows = Integer.parseInt(page.getRows());
+        page.setList(query.setFirstResult((xpage-1)*xrows).setMaxResults(xpage*xrows).getResultList());
+        
+		return page;
+	}
+
 }
