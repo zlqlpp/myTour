@@ -9,9 +9,13 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+
 
 
 
@@ -62,18 +66,26 @@ public class WqController {
 		//wqinfo.setId(id);
 		wqinfo.setWangwang(request.getParameter("onee"));
 		
-/*		DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd"); 
-		try {
-			
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+		Pattern p = Pattern.compile("[a-z]"); 
+		//Matcher m = p.matcher(str); 
+		//boolean b = m.matches()
+		
 		wqinfo.setCreateStoreTime(request.getParameter("twoo"));
 		wqinfo.setStroeURL(request.getParameter("threee").toString());
 		wqinfo.setAddress(request.getParameter("fourr").toString());
-		wqinfo.setStoreLevel(request.getParameter("fivee").toString());
-		wqinfo.setName(request.getParameter("sixx").toString());
+		
+		if(request.getParameter("fivee").toString().indexOf("red")>=0){
+			wqinfo.setStoreLevel("心");
+		}else if(request.getParameter("fivee").toString().indexOf("blue")>=0){
+			wqinfo.setStoreLevel("钻");
+		}else if(request.getParameter("fivee").toString().indexOf("cap")>=0){
+			wqinfo.setStoreLevel("冠");
+		}else{
+			wqinfo.setStoreLevel("无");
+		}
+		
+		
+		wqinfo.setName(request.getParameter("sixx").toString().substring(35,request.getParameter("sixx").toString().length()));
 		wqinfo.setImgURL(request.getParameter("sevenn").toString());
 		wqinfo.setSellCount(request.getParameter("eightt").toString());
 		wqinfo.setPrice(request.getParameter("ninee").toString());
@@ -135,7 +147,7 @@ public class WqController {
 			for(int i=0;i<list.size();i++){
 				wqinfo = (WqInfo) list.get(i);
 				contents+=wqinfo.getWangwang()+","+wqinfo.getAddress().toString()+","+wqinfo.getCreateStoreTime().toString()+
-						","+wqinfo.getName().substring(35, wqinfo.getName().length())+","+wqinfo.getId()+","+wqinfo.getPrice()+","+wqinfo.getSellCount()+
+						","+wqinfo.getName()+","+wqinfo.getImgURL()+","+wqinfo.getPrice()+","+wqinfo.getSellCount()+
 						","+wqinfo.getStoreLevel()+","+wqinfo.getStroeURL()+"\n";
 			}
 			
