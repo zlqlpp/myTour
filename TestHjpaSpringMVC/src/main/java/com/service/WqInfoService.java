@@ -13,4 +13,6 @@ public interface WqInfoService {
 	public List<WqInfo> findAll();
 	
 	public List<WqInfo> downLoadByDate(SearchPojo sp,Page page);
+	
+	public Page findByPage(Page page);
 }
