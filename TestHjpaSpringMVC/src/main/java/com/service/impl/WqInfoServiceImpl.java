@@ -33,5 +33,10 @@ public class WqInfoServiceImpl implements WqInfoService {
 		// TODO Auto-generated method stub
 		return wqinfoDao.downLoadByDate(sp, page);
 	}
+	@Override
+	public Page findByPage(Page page) {
+		// TODO Auto-generated method stub
+		return wqinfoDao.findByPage(page);
+	}
 
 }
