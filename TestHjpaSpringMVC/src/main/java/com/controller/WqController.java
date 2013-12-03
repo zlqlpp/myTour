@@ -103,12 +103,17 @@ public class WqController {
     public  String showAll(HttpServletRequest request, HttpServletResponse response){
 		
 		logger.info("sdfsdfs");
-		List<?> list = wqinfoService.findAll();
-		String json="{\"total\" : \"4\", \"rows\": ";
+		//List<?> list = wqinfoService.findAll();
+		Page page = new Page();
+		page.setRows(request.getParameter("rows"));
+		page.setCurrentpage(request.getParameter("page"));
+		page = wqinfoService.findByPage(page);
+		
+		String json="{\"total\" : \""+page.getTotal()+"\", \"rows\": ";
 		try {
 			//response.setCharacterEncoding("utf-8");
 			PrintWriter out = response.getWriter();
-			JSONArray jsonArray2 = JSONArray.fromObject( list );
+			JSONArray jsonArray2 = JSONArray.fromObject(page.getList());
 			System.out.println(jsonArray2.toString());
 			
 			out.print(json+=jsonArray2.toString()+"}");
