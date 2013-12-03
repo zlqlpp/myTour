@@ -13,10 +13,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.sf.json.JSONArray;
+
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -93,9 +94,10 @@ public class WqController {
 		try {
 			//response.setCharacterEncoding("utf-8");
 			PrintWriter out = response.getWriter();
-			JSONArray jsonArray2 = JSONArray.fromObject( list );
-			System.out.println(jsonArray2.toString());
-			json+=jsonArray2;
+			//JSONArray jsonArray2 = JSONArray.fromObject( list );
+			//System.out.println(jsonArray2.toString());
+			System.out.println(JSONArray.toJSONString(list));
+			json+=JSONArray.toJSONString(list);
 			out.print(json+="}");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
