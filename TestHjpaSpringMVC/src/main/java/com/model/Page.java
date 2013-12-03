@@ -4,16 +4,17 @@ import java.util.List;
 
 public class Page {
 
-	private String page;
-	private String rows;
+	private String currentpage;//要看哪一页
+	public String getCurrentpage() {
+		return currentpage;
+	}
+	public void setCurrentpage(String currentpage) {
+		this.currentpage = currentpage;
+	}
+	private String rows;//一面多少行
 	private List<?> list;
-	private String total;
-	public String getPage() {
-		return page;
-	}
-	public void setPage(String page) {
-		this.page = page;
-	}
+	private int total;//总共多少记录
+
 	public String getRows() {
 		return rows;
 	}
@@ -26,10 +27,11 @@ public class Page {
 	public void setList(List<?> list) {
 		this.list = list;
 	}
-	public String getTotal() {
+	public int getTotal() {
 		return total;
 	}
-	public void setTotal(String total) {
+	public void setTotal(int total) {
 		this.total = total;
 	}
+
 }
