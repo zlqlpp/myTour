@@ -99,7 +99,7 @@ public class WqController {
 			JSONArray jsonArray2 = JSONArray.fromObject( list );
 			System.out.println(jsonArray2.toString());
 			
-			out.print(json+="}");
+			out.print(json+=jsonArray2.toString()+"}");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
