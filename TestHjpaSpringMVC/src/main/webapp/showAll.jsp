@@ -21,24 +21,6 @@
 	<script type="text/javascript">
 		$(function() {
 			var pager = $('#dg').datagrid().datagrid('getPager'); // get the pager of datagrid
-			pager.pagination({
-				buttons : [ {
-					iconCls : 'icon-search',
-					handler : function() {
-						alert('search');
-					}
-				}, {
-					iconCls : 'icon-add',
-					handler : function() {
-						alert('add');
-					}
-				}, {
-					iconCls : 'icon-edit',
-					handler : function() {
-						alert('edit');
-					}
-				} ]
-			});
 		})
 	</script>
 </head>
@@ -49,8 +31,8 @@
 		<div class="demo-tip icon-tip"></div>
 	</div>
 	<div style="margin: 10px 0;"></div>
-	<table id="dg" title="晕个列表 "
-		style="width:1300px; height: 250px"
+	<table id="dg" title="列表 "
+		style="width:1300px; height: 350px"
 		data-options="rownumbers:true,singleSelect:true,pagination:true,url:'<%=path %>/wq/showAll.do',method:'get'">
 		<thead>
 			<tr>
@@ -58,11 +40,12 @@
 				<th data-options="field:'address',width:60,">实体店地址</th>
 				<th data-options="field:'createStoreTime',width:80">创店时间</th>
 				<th data-options="field:'name',width:400">商品名称</th>
-				<th data-options="field:'imgURL',width:80">商品图片地址</th>
+				
 				<th data-options="field:'price',width:100">商品价格</th>
 				<th data-options="field:'sellCount',width:80">销售量</th>
 				<th data-options="field:'storeLevel',width:80">店铺级别</th>
 				<th data-options="field:'stroeURL',width:240">店铺地址</th>
+				<th data-options="field:'imgURL',width:80">商品图片地址</th>
 				
 			</tr>
 		</thead>
